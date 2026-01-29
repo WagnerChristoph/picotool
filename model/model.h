@@ -4,6 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 #pragma once
+
+#ifdef _WIN32
+#define NOMINMAX
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #include "boot/uf2.h"
 #include "boot/picoboot.h"
 

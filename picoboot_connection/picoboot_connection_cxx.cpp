@@ -4,18 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#ifdef _WIN32
+#define NOMINMAX
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #include <stdexcept>
 #include <system_error>
 #include <map>
 #include <algorithm>
 #include "picoboot_connection_cxx.h"
-
-#ifdef _WIN32
-#undef min
-#undef max
-
-#define _CRT_SECURE_NO_WARNINGS
-#endif
 
 using picoboot::connection;
 using picoboot::connection_error;

@@ -4,6 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#ifdef _WIN32
+#define NOMINMAX
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #include <algorithm>
 #include <cassert>
 #include <cstdio>
@@ -23,13 +28,6 @@
 
 #include "portable_endian.h"
 
-// tsk namespace is polluted on windows
-#ifdef _WIN32
-#undef min
-#undef max
-
-#define _CRT_SECURE_NO_WARNINGS
-#endif
 
 void eh_he(elf32_header &eh) {
     // Swap to host endianness
