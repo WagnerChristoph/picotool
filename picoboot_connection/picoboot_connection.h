@@ -10,6 +10,9 @@
 // todo we should use fully encapsulate libusb
 
 #include <assert.h>
+#ifdef _WIN32
+#define NOMINMAX
+#endif
 #if HAS_LIBUSB
 #include <libusb.h>
 #endif
